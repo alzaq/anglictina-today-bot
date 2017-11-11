@@ -4,7 +4,13 @@ const app = express();
 //app.set('trust proxy', 1); // trust first proxy 
 //app.use(express.static('public'));
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
+  res.writeHeader(200, { 'Content-Type': 'text/html' });
+  res.write('I`m ready!');
+  res.end();
+});
+
+app.get('/message', (req, res) => {
   const path = req.path; // string
   const url = path.substr(1).split('/'); // array
   const params = req.query; // object
