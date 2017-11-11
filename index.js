@@ -19,6 +19,8 @@ app.get('/message', (req, res) => {
   // Your verify token. Should be a random string.
   let VERIFY_TOKEN = "qsHVJvSYKC1fNClouwxzH62ERud9syhFakc7RBAH"
   
+  console.log("MESSAGE", request);
+
   // Parse the query params
   let mode = req.query['hub.mode'];
   let token = req.query['hub.verify_token'];
